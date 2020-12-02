@@ -17,10 +17,7 @@ export default function Product({ product, currency }) {
     <Wrapper>
       <div className="product-container">
         <div className="product-content">
-          <img
-            className="product-image"
-            src="https://cdn.shopify.com/s/files/1/2960/5204/products/age-management_1024x1024_ad6e7a36-7242-469c-9fb5-242f5ee9c83f_1024x1024.png?v=1602809968"
-          />
+          <img className="product-image" src={product?.image_url} />
           <h2 className="product-name">{product?.title}</h2>
           <div className="product-price-container">
             <span className="product-price-text product-price-from-text">
