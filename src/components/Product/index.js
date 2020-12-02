@@ -1,35 +1,43 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, memo } from "react";
 import Wrapper from "./productStyle";
-import { AppContext } from "../../store";
+// import { AppContext } from "../../store";
 
-export default function Product({ product, currency }) {
-  const { state, dispatch } = useContext(AppContext);
+function Product(props) {
+  // const { state, dispatch } = useContext(AppContext);
 
   const formatMoney = (number) => {
-    return number.toLocaleString("en-US", { style: "currency", currency });
+    return number.toLocaleString("en-US", {
+      style: "currency",
+      currency: props.currency,
+    });
   };
 
   const handleAddToCart = (product) => {
-    dispatch({ kind: "isCartVisible", payload: true });
+    // dispatch({ kind: "isCartVisible", payload: true });
+    props.toggleCartVisibility(true);
   };
 
   return (
     <Wrapper>
       <div className="product-container">
         <div className="product-content">
-          <img className="product-image" src={product?.image_url} />
-          <h2 className="product-name">{product?.title}</h2>
+          <img
+            className="product-image"
+            src={props.product?.image_url}
+            alt={props.product?.title}
+          />
+          <h2 className="product-name">{props.product?.title}</h2>
           <div className="product-price-container">
             <span className="product-price-text product-price-from-text">
               From:
             </span>
             <span className="product-price-text">
-              {formatMoney(product?.price)}
+              {formatMoney(props.product?.price)}
             </span>
           </div>
           <button
             className="product-btn-add-to-cart"
-            onClick={() => handleAddToCart(product)}
+            onClick={() => handleAddToCart(props.product)}
           >
             Add to Cart
           </button>
@@ -38,3 +46,5 @@ export default function Product({ product, currency }) {
     </Wrapper>
   );
 }
+
+export default memo(Product);

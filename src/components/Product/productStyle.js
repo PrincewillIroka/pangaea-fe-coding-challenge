@@ -14,9 +14,10 @@ const Wrapper = styled.div`
 
   .product-image {
     object-fit: contain;
-    max-width: 100%;
-    max-height: 170px;
+    max-width: 324px;
+    height: 170px;
     cursor: pointer;
+    flex: 1 1 0%;
   }
 
   .product-name {
