@@ -11,11 +11,6 @@ const Wrapper = styled.div`
   .products-content {
     flex-wrap: wrap;
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    overflow: hidden;
 
     > div {
       width: 33.33%;
@@ -69,9 +64,6 @@ const Wrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     .products-content {
-      padding-left: 0rem;
-      padding-right: 0rem;
-
       > div {
         width: 50%;
       }

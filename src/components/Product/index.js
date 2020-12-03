@@ -26,13 +26,12 @@ function Product(props) {
 
   return (
     <Wrapper>
-      <div className="product-container">
+      <div className="product-container" data-test-id="product-container">
         <div className="product-content">
           <img
             className="product-image"
             src={props.product?.image_url}
             alt={props.product?.title}
-            alt="Product"
           />
           <h2 className="product-name">{props.product?.title}</h2>
           <div className="product-price-container">

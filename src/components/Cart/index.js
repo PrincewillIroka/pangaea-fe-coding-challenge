@@ -59,6 +59,7 @@ export default function Cart(props) {
             ? "cart-container-visible"
             : "cart-container-hidden"
         }`}
+        data-test-id="cart-container"
       >
         <div className="cart-dummy-content"></div>
         <div className="cart-full-content">

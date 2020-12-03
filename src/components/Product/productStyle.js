@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   .product-container {
     flex: 1;
-    padding: 2.5rem 0.5rem;
+    padding: 7rem 0.5rem;
   }
 
   .product-content {
@@ -14,28 +14,26 @@ const Wrapper = styled.div`
 
   .product-image {
     object-fit: contain;
-    max-width: 100%;
+    max-width: 7.5rem;
     height: 170px;
     cursor: pointer;
-    margin-bottom: 3rem;
   }
 
   .product-name {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.1rem;
     font-family: "FF Bau Regular", sans-serif;
     font-weight: 400;
-    margin-bottom: 0.3rem;
     cursor: pointer;
     text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 0.4rem;
   }
 
   .product-price-container {
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
 
     > .product-price-text {
-      font-size: 1rem;
-      line-height: 1.5;
       font-family: "FF Bau Regular", sans-serif;
       font-weight: 400;
     }
@@ -56,16 +54,16 @@ const Wrapper = styled.div`
     border: 0px;
     line-height: 1.2;
     padding-top: 2px;
-    font-weight: 600;
+    font-weight: 400;
     font-family: "FF Bau Regular", sans-serif;
     padding-left: 1rem;
     padding-right: 1rem;
     min-height: 52px;
-    background: rgb(75, 85, 72);
+    background: #596557;
     color: rgb(252, 252, 249);
-    margin-top: 0.5rem;
-    width: 100%;
+    width: 190px;
     cursor: pointer;
+    font-size: 1.1rem;
 
     &:hover {
       background: rgb(43, 46, 43);
@@ -100,20 +98,26 @@ const Wrapper = styled.div`
   }
 
   @media screen and (max-width: 992px) {
-    .product-name {
-      font-size: 0.8125rem;
+    .product-container {
+      padding: 5rem 1rem;
     }
 
-    .product-price-container {
-      margin-bottom: 0.5rem;
-
-      .product-price-text {
-        font-size: 0.8125rem;
-      }
+    .product-name,
+    .product-price-container,
+    .product-btn-add-to-cart {
+      font-size: 0.875rem;
     }
-    
+
+    .product-btn-add-to-cart {
+      font-size: 1.0rem;
+    }
   }
-  
+
+  @media screen and (max-width: 768px) {
+    .product-btn-add-to-cart {
+      width: 100%;
+    }
+  }
 `;
 
 export default Wrapper;

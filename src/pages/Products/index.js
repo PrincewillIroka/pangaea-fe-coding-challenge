@@ -106,7 +106,7 @@ export default function Products() {
 
   return (
     <Wrapper>
-      <section className="products-container">
+      <section className="products-container" data-testid="products-container">
         {data.isLoading ? (
           <Loader />
         ) : data.hasErrors ? (
