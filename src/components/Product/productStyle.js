@@ -14,10 +14,9 @@ const Wrapper = styled.div`
 
   .product-image {
     object-fit: contain;
-    max-width: 324px;
+    max-width: 100%;
     height: 170px;
     cursor: pointer;
-    flex: 1 1 0%;
     margin-bottom: 3rem;
   }
 
@@ -28,6 +27,7 @@ const Wrapper = styled.div`
     font-weight: 400;
     margin-bottom: 0.3rem;
     cursor: pointer;
+    text-align: center;
   }
 
   .product-price-container {
@@ -99,25 +99,21 @@ const Wrapper = styled.div`
     }
   }
 
-  @media screen and (min-width: 992px) {
-    .product-container {
-      padding: 3rem 2rem;
+  @media screen and (max-width: 992px) {
+    .product-name {
+      font-size: 0.8125rem;
     }
 
-    .product-btn-add-to-cart {
-      max-width: 157px;
+    .product-price-container {
+      margin-bottom: 0.5rem;
+
+      .product-price-text {
+        font-size: 0.8125rem;
+      }
     }
+    
   }
-
-  @media screen and (min-width: 768px) {
-    .product-container {
-      padding: 3rem 2rem;
-    }
-
-    .product-btn-add-to-cart {
-      max-width: 190px;
-    }
-  }
+  
 `;
 
 export default Wrapper;

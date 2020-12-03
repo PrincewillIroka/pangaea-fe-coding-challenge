@@ -129,7 +129,7 @@ export default function Cart(props) {
                     />
                     <img
                       className="cart-product-image"
-                      alt="Product image here"
+                      alt="Product here"
                       src={cartItem.image_url}
                     />
                   </div>

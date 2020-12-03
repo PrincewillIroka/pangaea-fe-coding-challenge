@@ -149,9 +149,9 @@ const Wrapper = styled.div`
 
         >.cart-product-image{
           height: 60px;
-          width: auto;
+          width: calc(100% - 20px);
           object-fit: contain;
-          margin: auto;
+          margin: auto 10px;
         }
       }
     }

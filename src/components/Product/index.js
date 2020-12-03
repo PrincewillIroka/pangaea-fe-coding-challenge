@@ -32,6 +32,7 @@ function Product(props) {
             className="product-image"
             src={props.product?.image_url}
             alt={props.product?.title}
+            alt="Product"
           />
           <h2 className="product-name">{props.product?.title}</h2>
           <div className="product-price-container">
