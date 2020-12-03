@@ -18,6 +18,7 @@ const Wrapper = styled.div`
     height: 170px;
     cursor: pointer;
     flex: 1 1 0%;
+    margin-bottom: 3rem;
   }
 
   .product-name {
@@ -25,20 +26,23 @@ const Wrapper = styled.div`
     line-height: 1.7;
     font-family: "FF Bau Regular", sans-serif;
     font-weight: 400;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     cursor: pointer;
   }
 
-  .product-price-text {
-    font-size: 1rem;
-    line-height: 1.5;
-    font-family: "FF Bau Regular", sans-serif;
-    font-weight: 400;
-  }
+  .product-price-container {
+    margin-bottom: 0.5rem;
 
-  .product-price-from-text {
-    margin-right: 0.25rem;
+    > .product-price-text {
+      font-size: 1rem;
+      line-height: 1.5;
+      font-family: "FF Bau Regular", sans-serif;
+      font-weight: 400;
+    }
+
+    > .product-price-from-text {
+      margin-right: 0.25rem;
+    }
   }
 
   .product-btn-add-to-cart {
@@ -65,6 +69,33 @@ const Wrapper = styled.div`
 
     &:hover {
       background: rgb(43, 46, 43);
+    }
+  }
+
+  .products-loader-container {
+    display: flex;
+    align-items: center;
+    justify-center: center;
+    height: 100%;
+    width: 100%;
+    background: red;
+
+    > .loader {
+      border: 16px solid #f3f3f3;
+      border-top: 16px solid #3498db;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
   }
 

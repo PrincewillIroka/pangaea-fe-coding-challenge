@@ -1,10 +1,10 @@
-export const getProducts = () => {
+export const getProducts = (currency) => {
   return `{
         products {
             id
             title
             image_url
-            price(currency:USD)
+            price(currency:${currency})
             product_options{
               title
               prefix

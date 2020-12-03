@@ -1,6 +1,9 @@
 import { createContext, useReducer } from "react";
 
 export function appReducer(state, action) {
+  if (action.kind === "cart") {
+    localStorage.setItem("cart", JSON.stringify(action.payload));
+  }
   state = { ...state, [action.kind]: action.payload };
   return state;
 }
@@ -9,8 +12,7 @@ export const AppContext = createContext();
 
 export const AppStateProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, {
-    isCartVisible: false,
-    cart: [],
+    cart: JSON.parse(localStorage.getItem("cart")) || [],
   });
 
   return (

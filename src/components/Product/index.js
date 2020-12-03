@@ -1,19 +1,26 @@
-import React, { useContext, useEffect, memo } from "react";
+import React, { useContext, memo } from "react";
 import Wrapper from "./productStyle";
-// import { AppContext } from "../../store";
+import { AppContext } from "../../store";
+import { formatMoney } from "../../utils";
 
 function Product(props) {
-  // const { state, dispatch } = useContext(AppContext);
+  const { state, dispatch } = useContext(AppContext);
 
-  const formatMoney = (number) => {
-    return number.toLocaleString("en-US", {
-      style: "currency",
-      currency: props.currency,
-    });
-  };
-
-  const handleAddToCart = (product) => {
-    // dispatch({ kind: "isCartVisible", payload: true });
+  const handleAddToCart = async (product) => {
+    let cart = state.cart;
+    const cartItem = cart.find((item) => item.id === product.id);
+    if (cartItem) {
+      cart = cart.map((item) => {
+        if (item.id === cartItem.id) {
+          item.quantity += 1;
+        }
+        return item;
+      });
+    } else {
+      product.quantity = 1;
+      cart.push(product);
+    }
+    await dispatch({ kind: "cart", payload: cart });
     props.toggleCartVisibility(true);
   };
 
@@ -32,7 +39,7 @@ function Product(props) {
               From:
             </span>
             <span className="product-price-text">
-              {formatMoney(props.product?.price)}
+              {formatMoney(props.product?.price, props.currency)}
             </span>
           </div>
           <button
