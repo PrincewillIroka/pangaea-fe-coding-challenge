@@ -1,4 +1,4 @@
-## Challenge to recreate luminskin.com product page and cart
+## Pangaea FE Coding Challenge
 
 ### Deployment
 https://luminskin-product-page.vercel.app/
